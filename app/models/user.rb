@@ -4,9 +4,9 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :password, presence: true
   has_secure_password
-    
+  has_many :posts
   def add_remember_token
-    self.remember_digest =  Digest::SHA1.hexdigest SecureRandom.urlsafe_base64.to_s 
+    self.remember_digest =  Digest::SHA1.hexdigest SecureRandom.urlsafe_base64.to_s
   end
 
   def authenticated? (remember_token)
