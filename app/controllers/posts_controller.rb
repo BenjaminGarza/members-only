@@ -11,9 +11,7 @@ class PostsController < ApplicationController
     if @post.user_id == current_user.id && @post.save
       redirect_to posts_path
     else
-      unless @post.user_id == current_user.id
-        @post.errors.add(:warning, 'Invalid User')
-      end
+      @post.errors.add(:warning, 'Invalid User') unless @post.user_id == current_user.id
       render 'new'
     end
   end

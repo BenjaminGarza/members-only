@@ -12,4 +12,4 @@ class UsersController < ApplicationController
   def sign_in_check
     redirect_to root_url unless logged_in?
   end
-  end
+end
