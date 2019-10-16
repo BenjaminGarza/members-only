@@ -24,9 +24,8 @@ class ApplicationController < ActionController::Base
     user = User.find_by(id: user_id)
     
     return unless user && authenticated?(cookies[:remember_token])
-      sign_in user
-      @current_user = user
-    end
+    sign_in user
+    @current_user = user
   end
 
   def logged_in?
