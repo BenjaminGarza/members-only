@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is from the microverse curriculum using The Odin Project
+The goal was to use active record and make a small relational database with users, posts, and comments
 
-Things you may want to cover:
+To run the project first clone the repo.
+Navigate to the project folder and run rails console
 
-* Ruby version
+edit users by using the User class (user = User.new)
+posts with the Post class and comments with the Comment class
 
-* System dependencies
+Ruby version 2.6.4
+Rails version 6.0.0
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Authors: [Andoni Uzquiano](https://github.com/Juakata),  [Benjamin Garza](https://github.com/BenjaminGarza)
