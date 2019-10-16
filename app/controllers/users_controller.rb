@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   private
 
-    def sign_in_check
-      redirect_to root_url unless logged_in?
-    end
+  def sign_in_check
+    redirect_to root_url unless logged_in?
+  end
 end
