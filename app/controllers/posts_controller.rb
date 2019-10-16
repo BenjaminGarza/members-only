@@ -18,13 +18,12 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @current_user = current_user
   end
 
   private
 
   def check_sign_in
-    redirect_to posts_path unless logged_in?
+    redirect_to root_path unless logged_in?
   end
 
   def post_params

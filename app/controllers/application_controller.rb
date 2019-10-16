@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  helper_method :logged_in?, :current_user
+
   def sign_in(user)
     session[:user_id] = user.id
     cookies.permanent.signed[:user_id] = user.id
@@ -16,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user?(user)
-    current_user == user
+    @current_user == user
   end
 
   def set_current_user
