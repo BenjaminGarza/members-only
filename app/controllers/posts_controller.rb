@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  before_action :check_sign_in, only: [:create, :new]
+  before_action :check_sign_in, only: %i[create new]
   def new
     @post = Post.new
   end
@@ -9,7 +11,9 @@ class PostsController < ApplicationController
     if @post.user_id == current_user.id && @post.save
       redirect_to posts_path
     else
-      @post.errors.add(:warning, "Invalid User") unless @post.user_id == current_user.id
+      unless @post.user_id == current_user.id
+        @post.errors.add(:warning, 'Invalid User')
+      end
       render 'new'
     end
   end
