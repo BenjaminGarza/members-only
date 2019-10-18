@@ -1,0 +1,13 @@
+<h1>Welcome to the Post Page</h1>
+<% if logged_in? %>
+  <%= link_to "User information", user_path(current_user.id) %>
+<% end %>
+<% @posts.each do |post| %>
+  <div>
+    <% if logged_in? %>
+      <h2> <%= post.user.name %> </h2>
+    <% end %>
+    <h2> <%= post.title %> </h2>
+    <p> <%= post.body %> </p>
+  </div>
+<% end %>

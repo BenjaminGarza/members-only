@@ -1,0 +1,4 @@
+<h1> <%= @user.name %> <%= @user.email %> User ID:<%= @user.id %> </h1>
+<%= link_to "Show all posts ", posts_path %><br><br>
+<%= link_to "Create new post", new_post_path %><br><br>
+<%= link_to "Sign out", logout_path, method: :delete %>

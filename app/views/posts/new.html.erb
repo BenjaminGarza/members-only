@@ -1,0 +1,22 @@
+<h1>Post</h1>
+
+<% if @post.errors.any? %>
+  <ul>
+    <% @post.errors.full_messages.each do |message| %>
+      <li> <%= message %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@post) do |f|%>
+  <%= f.hidden_field :user_id, value: @current_user.id %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.button "Send" %>
+<% end %>
+<br>
+<%= link_to "User information", user_path(current_user.id) %>
